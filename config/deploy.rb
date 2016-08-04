@@ -39,3 +39,7 @@ set :format, :pretty
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+set :passenger_restart_with_touch, true
+
+set :rails_env, "production"
