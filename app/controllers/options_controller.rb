@@ -3,8 +3,8 @@ class OptionsController < ApplicationController
 
   # GET /options.html
   def index
-    @my_options = Option.where(guest: @guest)
-    @other_options = Option.where.not(guest: @guest)
+    @my_options = Option.where(guest: @guest).limit(5)
+    @other_options = Option.where.not(guest: @guest).limit(5)
     render layout: false
   end
 

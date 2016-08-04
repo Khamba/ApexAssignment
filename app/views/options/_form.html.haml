@@ -9,16 +9,12 @@
     .radio-wrapper.form-group
       .radio.col-sm-offset-3
         %label
-          %input#option_call_flag_true{:name => "option[call_flag]", :type => "radio", :value => "true"}/
-          = checked if @option.call_flag?
-          \&gt;
+          = radio_button_tag("option[call_flag]", true, @option.call_flag? )
           Call
       .radio.col-sm-offset-3
         %label
-          %input#option_call_flag_false{:name => "option[call_flag]", :type => "radio", :value => "false"}/
-          = checked if @option.put_flag?
-          \&gt;
+          = radio_button_tag("option[call_flag]", false, @option.put_flag? )
           Put
   .form-actions.form-group
     .col-sm-offset-3.col-sm-9
-      = f.button :submit, Save, class: 'btn btn-primary'
+      = f.button :submit, "Save", class: 'btn btn-primary'

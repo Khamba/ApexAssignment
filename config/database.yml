@@ -83,3 +83,4 @@ production:
   database: ApexAssignment_production
   username: ApexAssignment
   password: <%= ENV['APEXASSIGNMENT_DATABASE_PASSWORD'] %>
+  host: localhost
