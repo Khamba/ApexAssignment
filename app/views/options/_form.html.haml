@@ -1,0 +1,24 @@
+= simple_form_for(@option, html: { class: 'form-horizontal' }, defaults: { required: false } ) do |f|
+  .form-inputs
+    = f.input :stock_price, wrapper: :horizontal_form, input_html: { class: 'detect-change' }
+    = f.input :strike_price, wrapper: :horizontal_form, input_html: { class: 'detect-change' }
+    = f.input :years_to_maturity, wrapper: :horizontal_form, input_html: { class: 'detect-change' }
+    = f.input :risk_free_interest_rate, wrapper: :horizontal_form, label: "Risk free interest rate (%)", input_html: { class: 'detect-change' }
+    = f.input :volatality, wrapper: :horizontal_form, label: "Volatality (%)", input_html: { class: 'detect-change' }
+    = f.input :name, hint: "Give the option a name to refer to later", wrapper: :horizontal_form
+    .radio-wrapper.form-group
+      .radio.col-sm-offset-3
+        %label
+          %input#option_call_flag_true{:name => "option[call_flag]", :type => "radio", :value => "true"}/
+          = checked if @option.call_flag?
+          \&gt;
+          Call
+      .radio.col-sm-offset-3
+        %label
+          %input#option_call_flag_false{:name => "option[call_flag]", :type => "radio", :value => "false"}/
+          = checked if @option.put_flag?
+          \&gt;
+          Put
+  .form-actions.form-group
+    .col-sm-offset-3.col-sm-9
+      = f.button :submit, Save, class: 'btn btn-primary'

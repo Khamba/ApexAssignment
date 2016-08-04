@@ -1,0 +1,25 @@
+footer{
+	position: fixed;
+	bottom: 0;
+	height: 2.3em;
+	line-height: 2.3em;
+	width: 100%;
+	text-align: center;
+	padding-top: 0.35em;
+	margin: 0;
+}
+
+footer span{
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	letter-spacing: 0.03em;
+	font-size: 1.1em;
+}
+
+body{
+	padding-bottom: 3.3em;
+}

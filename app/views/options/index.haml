@@ -1,0 +1,19 @@
+#accordion.list-group{"aria-multiselectable" => "true", :role => "tablist"}
+  .panel.panel-default
+    #my_options.panel-heading{:role => "tab"}
+      %h4.panel-title
+        %a{"aria-controls" => "collapseOne", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#collapseOne", :role => "button"}
+          My Saved Options
+    #collapseOne.panel-collapse.collapse{"aria-labelledby" => "my_options", :role => "tabpanel"}
+      .panel-body
+        - @my_options.each do |option|
+          %li.list-group-item= link_to option.name, edit_option_path(option)
+  .panel.panel-default
+    #other_options.panel-heading{:role => "tab"}
+      %h4.panel-title
+        %a.collapsed{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "#collapseTwo", :role => "button"}
+          Other People's Saved Options
+    #collapseTwo.panel-collapse.collapse{"aria-labelledby" => "other_options", :role => "tabpanel"}
+      .panel-body
+        - @other_options.each do |option|
+          %li.list-group-item= link_to option.name, edit_option_path(option)

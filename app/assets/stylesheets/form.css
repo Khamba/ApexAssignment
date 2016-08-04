@@ -1,0 +1,17 @@
+.radio-wrapper{
+	padding-left: 18px;
+}
+
+form{
+	padding-left: 10px;
+}
+
+p#result{
+	margin-left: 27%;
+	font-size: 1.17em;
+	margin-bottom: 3%;
+}
+
+#get-result{
+	margin-right: 2%;
+}

@@ -1,0 +1,37 @@
+# == Schema Information
+#
+# Table name: options
+#
+#  id                      :integer          not null, primary key
+#  name                    :string
+#  stock_price             :decimal(, )
+#  strike_price            :decimal(, )
+#  years_to_maturity       :decimal(, )
+#  risk_free_interest_rate :decimal(, )
+#  volatality              :decimal(, )
+#  call_flag               :boolean          default(TRUE)
+#  black_scholes_value     :decimal(, )
+#  guest_id                :integer
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_price: 9.99
+  strike_price: 9.99
+  years_to_maturity: 9.99
+  risk_free_interest_rate: 9.99
+  volatality: 9.99
+  call_flag: false
+  black_scholes_value: 9.99
+
+two:
+  stock_price: 9.99
+  strike_price: 9.99
+  years_to_maturity: 9.99
+  risk_free_interest_rate: 9.99
+  volatality: 9.99
+  call_flag: false
+  black_scholes_value: 9.99

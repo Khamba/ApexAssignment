@@ -1,0 +1,33 @@
+<%= simple_form_for(@option, html: { class: 'form-horizontal' }, defaults: { required: false } ) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :stock_price, wrapper: :horizontal_form, input_html: { class: 'detect-change' } %>
+    <%= f.input :strike_price, wrapper: :horizontal_form, input_html: { class: 'detect-change' } %>
+    <%= f.input :years_to_maturity, wrapper: :horizontal_form, input_html: { class: 'detect-change' }  %>
+    <%= f.input :risk_free_interest_rate, wrapper: :horizontal_form, label: "Risk free interest rate (%)", input_html: { class: 'detect-change' } %>
+    <%= f.input :volatality, wrapper: :horizontal_form, label: "Volatality (%)", input_html: { class: 'detect-change' } %>
+
+    <%= f.input :name, hint: "Give the option a name to refer to later", wrapper: :horizontal_form %>
+    
+    <div class="radio-wrapper form-group">
+      <div class="radio col-sm-offset-3">
+        <label>
+          <input value="true" name="option[call_flag]" id="option_call_flag_true" type="radio" <%= "checked" if @option.call_flag? %>>
+          Call
+        </label>
+      </div>
+      <div class="radio col-sm-offset-3">
+        <label>
+          <input value="false" name="option[call_flag]" id="option_call_flag_false" type="radio" <%= "checked" if @option.put_flag? %>>
+          Put
+        </label>
+      </div>
+    </div>  
+  </div>
+
+  <div class="form-actions form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <%= f.button :submit, "Save", class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
