@@ -7,10 +7,10 @@ class ApplicationController < ActionController::Base
   private
 
     def guest
-      @guest = Guest.find_by token: session[:guest_token]
+      @guest = Guest.find_by token: cookies[:guest_token]
       return @guest if @guest # already logged in, don't need to create another one
       @guest = Guest.create
-      session[:guest_token] = @guest.token
+      cookies[:guest_token] = @guest.token
     end
 
 end
