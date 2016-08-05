@@ -22,7 +22,7 @@ function render_options(options, id, title){
 					</a>\
 				</h4>\
 			</div>\
-			<div aria-labelledby="' + id + '" class="panel-collapse collapse" id="collapse' + id + '" role="tabpanel">\
+			<div aria-labelledby="' + id + '" class="panel-collapse collapse in" id="collapse' + id + '" role="tabpanel">\
 				<div class="panel-body">\
 	';
 	$.each(options, function(index, option){
