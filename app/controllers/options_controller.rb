@@ -5,7 +5,7 @@ class OptionsController < ApplicationController
   def index
     @my_options = Option.where(guest: @guest).limit(5)
     @other_options = Option.where.not(guest: @guest).limit(5)
-    render layout: false
+    render json: { my_options: @my_options, other_options: @other_options }
   end
 
   # GET /options/new
@@ -27,7 +27,7 @@ class OptionsController < ApplicationController
       else
         format.html { render :new }
       end
-    end  
+    end
   end
 
   # PATCH/PUT /options/1
@@ -50,7 +50,7 @@ class OptionsController < ApplicationController
           format.html { render :new }
         end
       end
-    end      
+    end
   end
 
   private
