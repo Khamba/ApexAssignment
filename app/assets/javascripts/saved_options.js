@@ -28,7 +28,7 @@ function render_options(options, id, title){
 	$.each(options, function(index, option){
 		html += '\
 			<li class="list-group-item">\
-				<a href="options/' + option.id + '/edit"> ' + option.name + ' </a>\
+				<a href="/options/' + option.id + '/edit"> ' + option.name + ' </a>\
 			</li>\
 		';
 	});
