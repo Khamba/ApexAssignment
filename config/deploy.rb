@@ -3,7 +3,7 @@ lock '3.6.0'
 
 set :application, 'ApexAssignment'
 set :scm, :git
-set :repo_url, 'git@github.com:Khamba/ApexAssignment.git'
+set :repo_url, 'https://github.com/Khamba/ApexAssignment.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
