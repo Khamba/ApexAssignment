@@ -3,8 +3,8 @@ class OptionsController < ApplicationController
 
   # GET /options.html
   def index
-    @my_options = Option.where(guest: @guest).limit(5)
-    @other_options = Option.where.not(guest: @guest).limit(5)
+    @my_options = Option.where(guest: @guest).order(updated_at: :desc).limit(5)
+    @other_options = Option.where.not(guest: @guest).order(updated_at: :desc).limit(5)
     render json: { my_options: @my_options, other_options: @other_options }
   end
 
