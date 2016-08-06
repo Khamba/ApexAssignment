@@ -2,7 +2,7 @@
   .row
     .col-xs-12.col-sm-6.col-md-6.col-lg-6
       = render 'form'
-    .col-xs-12.col-sm-6.col-md-6.col-lg-6.margin-top-7-on-xs
-      = line_chart(@array_for_chart)
+    .col-xs-12.col-sm-6.col-md-6.col-lg-6.margin-top-7-on-xs.chart-wrapper
+      = line_chart(@array_for_chart, ytitle: "Black Scholes Value", xtitle: @option.range_attribute.humanize)
   .row
     #saved_options.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-sm-offset-6.margin-top-7-on-xs.below-chart

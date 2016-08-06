@@ -1,8 +1,4 @@
-div#saved_options{
-  padding: 0 15px;
-}
-
-div#saved_options.below-chart{
+div#saved_options.below-chart {
   margin-top: -10%;
 }
 
