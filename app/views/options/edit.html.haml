@@ -2,6 +2,11 @@
   .row
     .col-xs-12.col-sm-8.col-md-8.col-lg-6
       = render 'form'
+    - unless @option.range_attribute.blank?
+      .col-xs-12.col-sm-4.col-md-4.col-lg-6
+        = line_chart(@array_for_chart)
+      #saved_options.col-xs-12.col-sm-4.col-md-4.col-lg-6
+    - else
+      #saved_options.col-xs-12.col-sm-4.col-md-4.col-lg-6
       %p#result.text-success
-        Black-Scholes Value: #{@option.black_scholes_value.round(4)}
-    #saved_options.col-xs-12.col-sm-4.col-md-4.col-lg-6
+        Black-Scholes Value: #{@option.black_scholes_values.first}

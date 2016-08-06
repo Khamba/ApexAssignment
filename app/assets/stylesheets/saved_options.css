@@ -1,0 +1,13 @@
+div#saved_options{
+  padding: 0 15px;
+}
+
+div#saved_options.below-chart{
+  margin-top: -10%;
+}
+
+@media only screen and (max-width : 768px) {
+  div.margin-top-7-on-xs{
+    margin-top: 7% !important;
+  }
+}

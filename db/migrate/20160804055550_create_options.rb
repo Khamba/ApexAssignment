@@ -8,8 +8,12 @@ class CreateOptions < ActiveRecord::Migration
       t.decimal :risk_free_interest_rate
       t.decimal :volatality
       t.boolean :call_flag, default: true
-      t.decimal :black_scholes_value
+      t.decimal :range_array, array: true
+      t.decimal :black_scholes_values, scale: 4, precision: 10, array: true
+      t.string :range_attribute
+      t.decimal :range_to
       t.references :guest
+      t.decimal :interval, scale: 4, precision: 10
 
       t.timestamps null: false
     end

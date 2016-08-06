@@ -63,3 +63,5 @@ gem "twitter-bootstrap-rails"
 gem 'simple_form'
 
 gem "haml-rails"
+
+gem "chartkick"

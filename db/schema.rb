@@ -29,11 +29,15 @@ ActiveRecord::Schema.define(version: 20160804062438) do
     t.decimal  "years_to_maturity"
     t.decimal  "risk_free_interest_rate"
     t.decimal  "volatality"
-    t.boolean  "call_flag",               default: true
-    t.decimal  "black_scholes_value"
+    t.boolean  "call_flag",                                        default: true
+    t.decimal  "range_array",                                                                  array: true
+    t.decimal  "black_scholes_values",                                                         array: true
+    t.string   "range_attribute"
+    t.decimal  "range_to"
     t.integer  "guest_id"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.decimal  "interval",                precision: 10, scale: 4
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
   end
 
 end

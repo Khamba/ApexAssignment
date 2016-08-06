@@ -1,11 +1,20 @@
-= simple_form_for(@option, html: { class: 'form-horizontal' }, defaults: { required: false } ) do |f|
+= simple_form_for(@option, html: { class: 'form-horizontal' }, defaults: { required: false }, remote: true ) do |f|
   .form-inputs
-    = f.input :stock_price, wrapper: :horizontal_form, input_html: { class: 'detect-change' }
-    = f.input :strike_price, wrapper: :horizontal_form, input_html: { class: 'detect-change' }
-    = f.input :years_to_maturity, wrapper: :horizontal_form, input_html: { class: 'detect-change' }
-    = f.input :risk_free_interest_rate, wrapper: :horizontal_form, label: "Risk free interest rate (%)", input_html: { class: 'detect-change' }
-    = f.input :volatality, wrapper: :horizontal_form, label: "Volatality (%)", input_html: { class: 'detect-change' }
+    = f.input :stock_price, wrapper: :horizontal_form, input_html: { class: 'add-rangeable' }
+    %p#stock_price_error.error
+    = f.input :strike_price, wrapper: :horizontal_form
+    %p#strike_price_error.error
+    = f.input :years_to_maturity, wrapper: :horizontal_form, input_html: { class: 'add-rangeable' }
+    %p#years_to_maturity_error.error
+    = f.input :risk_free_interest_rate, wrapper: :horizontal_form, label: "Risk free interest rate (%)", input_html: { class: 'add-rangeable' }
+    %p#risk_free_interest_rate_error.error
+    = f.input :volatality, wrapper: :horizontal_form, label: "Volatality (%)", input_html: { class: 'add-rangeable' }
+    %p#volatality_error.error
+    = f.input :range_attribute, as: :hidden, default: '', input_html: { 'data-range-to' => @option.range_to }
+    = f.input :interval, wrapper: :horizontal_form, wrapper_html: { class: 'hidden' }
+    %p#interval_error.error
     = f.input :name, hint: "Give the option a name to refer to later", wrapper: :horizontal_form
+    %p#name_error.error
     .radio-wrapper.form-group
       .radio.col-sm-offset-3
         %label

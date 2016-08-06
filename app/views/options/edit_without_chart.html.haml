@@ -1,0 +1,7 @@
+.container-fluid
+  .row
+    .col-xs-12.col-sm-8.col-md-8.col-lg-6
+      = render 'form'
+    #saved_options.col-xs-12.col-sm-4.col-md-4.col-lg-6
+  %p#result.text-success
+    Black-Scholes Value: #{@option.black_scholes_values.first}

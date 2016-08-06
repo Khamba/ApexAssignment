@@ -1,17 +1,36 @@
 .radio-wrapper{
-	padding-left: 18px;
+  padding-left: 18px;
 }
 
 form{
-	padding-left: 10px;
+  padding-left: 10px;
 }
 
 p#result{
-	margin-left: 27%;
-	font-size: 1.17em;
-	margin-bottom: 3%;
+  margin-left: 27%;
+  font-size: 1.17em;
+  margin-bottom: 3%;
 }
 
 #get-result{
-	margin-right: 2%;
+  margin-right: 2%;
+}
+
+input{
+  display: inline-block !important;
+}
+
+input:first-child{
+  margin-right: 2%;
+}
+
+p.error{
+  color: red;
+  font-size: 1.07em;
+}
+
+@media only screen and (min-width : 768px) {
+  p.error{
+    margin-left: 27%;
+  }
 }
